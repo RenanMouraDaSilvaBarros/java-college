@@ -7,11 +7,13 @@ public class PassienteClinic extends Person {
 
     HealthPlan healthPlan;
 
-    public PassienteClinic() {
+    public PassienteClinic(String name, int identity, String birth, HealthPlan healthPlan) {
+        super(name, identity, birth);
+        this.healthPlan = healthPlan;
     }
 
     @Override
     public String toString() {
-        return "PassienteClinic [healthPlan=" + healthPlan + "]";
+        return super.toString() + " PassienteClinic [healthPlan=" + healthPlan + "] ";
     }
 }

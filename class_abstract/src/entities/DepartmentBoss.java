@@ -1,31 +1,26 @@
 package entities;
 
-import java.util.Date;
-
 import enums.Department;
 
 public class DepartmentBoss extends Employee {
 
     Department department;
-    boolean promotionToBoss;
+    Employee promotionToBoss;
 
-    public DepartmentBoss(double salary, Date addmission, Department department, boolean promotionToBoss) {
-        super(salary, addmission);
+    public DepartmentBoss(Employee promotionToBoss, Department department, String addmission) {
+        super(promotionToBoss.name, promotionToBoss.identity, promotionToBoss.birth, promotionToBoss.salary,
+                addmission);
         this.department = department;
         this.promotionToBoss = promotionToBoss;
     }
 
-    public void whichDepartment() {
-
-    }
-
-    public void departmentBoss() {
-
+    Department whichDepartment() {
+        return department;
     }
 
     @Override
     public String toString() {
-        return "DepartmentBoss [department=" + department + ", promotionToBoss=" + promotionToBoss + "]";
+        return "DepartmentBoss [department=" + department + ", promotionToBoss=" + promotionToBoss + "] ";
     }
 
 }

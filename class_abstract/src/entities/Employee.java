@@ -1,13 +1,12 @@
 package entities;
 
-import java.util.Date;
-
 public class Employee extends Person {
 
-    Date addimission;
+    String addimission;
     double salary;
 
-    public Employee(double salary, Date addmission) {
+    public Employee(String name, int identity, String birth, double salary, String addmission) {
+        super(name, identity, birth);
         this.addimission = addmission;
         this.salary = salary;
     }
@@ -18,7 +17,7 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return "employee [addimission=" + addimission + ", salary=" + salary + "]";
+        return super.toString() + "employee [addimission=" + addimission + ", salary=" + salary + "] ";
     }
 
 }

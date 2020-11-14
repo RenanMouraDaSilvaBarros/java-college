@@ -1,14 +1,20 @@
 package entities;
 
-import java.util.Date;
-
 abstract class Person {
+
     String name;
     int identity;
-    Date birth;
+    String birth;
+
+    public Person(String name, int identity, String birth) {
+        this.name = name;
+        this.identity = identity;
+        this.birth = birth;
+    }
 
     @Override
     public String toString() {
-        return "Person name:" + name + "idantity:" + identity + "birth" + birth;
+        return " Person name:" + name + " identity:" + identity + " birth" + birth;
     }
+
 }

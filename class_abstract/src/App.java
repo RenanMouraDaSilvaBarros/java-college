@@ -1,26 +1,42 @@
-import entities.BankLoan;
-import entities.DepartmentBoss;
-import entities.Employee;
-import enums.Department;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Scanner;
+import managment.EmployeeManagment;
 
 public class App {
     public static void main(String[] args) {
 
-        List<Employee> employees = new ArrayList<Employee>();
+        EmployeeManagment employeeManagment = new EmployeeManagment();
+        Scanner input = new Scanner(System.in);
+        boolean isAtivicty = true;
+        int choose;
 
-        employees.add(new Employee("Isaias man", 24, "01/01/2001", -50, "10/01/1336"));
-        employees.add(new Employee("Renan moura", 18, "01/01/2001", 100, "10/01/1336"));
-        employees.add(new Employee("Eduardo", 24, "01/01/2001", 5, "10/01/1336"));
-        employees.add(new Employee("Amado batista", 100, "01/01/2001", 1000, "10/01/1336"));
+        while (isAtivicty) {
 
-        Employee employee = new Employee("Renan moura", 18, "01/01/2001", 1000, "10/01/1336");
-        employees.add(new DepartmentBoss(employee, Department.CLEANING, "02/2020"));
+            System.out.println("1-add employees");
 
-        for (Employee e : employees) {
-            System.out.println(BankLoan.calculateLoan(e));
+            if (!EmployeeManagment.employees.isEmpty())
+                System.out.println("2-add DepartmentBoss");
+
+            System.out.println("3-show all loans");
+            System.out.println("0-exit");
+
+            choose = input.nextInt();
+
+            switch (choose) {
+                case 1:
+                    employeeManagment.addEmployee();
+                    break;
+                case 2:
+                    employeeManagment.addDepartmentBoss();
+                    break;
+                case 3:
+                    employeeManagment.showLoanAll();
+                    break;
+                case 0:
+                    isAtivicty = false;
+            }
         }
+        input.close();
 
     }
 }

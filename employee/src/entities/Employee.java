@@ -24,6 +24,8 @@ abstract class Employee {
         this.registration = registration;
     }
 
+    public abstract double earnings();
+
     @Override
     public String toString() {
         return "Employee [name=" + name + ", registration=" + registration + "]";

@@ -1,4 +1,4 @@
-abstract class Employee {
+public abstract class Employee {
 
     String name;
     String registration;
@@ -12,16 +12,8 @@ abstract class Employee {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getRegistration() {
         return registration;
-    }
-
-    public void setRegistration(String registration) {
-        this.registration = registration;
     }
 
     public abstract double earnings();

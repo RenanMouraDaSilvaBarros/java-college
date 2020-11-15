@@ -15,10 +15,10 @@ public class EmployeeManagment {
 
     public static List<Employee> employees = new ArrayList<Employee>();
 
-    HashMap<String, enums.Department> map = new HashMap<>();
+    HashMap<String, enums.Department> map;
 
     public EmployeeManagment() {
-        HashMap<String, enums.Department> map = getDepartament();
+        map = getDepartament();
     }
 
     public void addEmployee() {

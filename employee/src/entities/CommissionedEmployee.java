@@ -3,7 +3,7 @@ public class CommissionedEmployee extends Employee {
     double valuePerSale;
     int quantityForSale;
 
-    public CommissionedEmployee(String name, String registration, double valuePerSale, int quantityForSale) {
+    public CommissionedEmployee(String name, String registration, int quantityForSale, double valuePerSale) {
         super(name, registration);
         this.valuePerSale = valuePerSale;
         this.quantityForSale = quantityForSale;

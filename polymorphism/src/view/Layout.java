@@ -1,7 +1,5 @@
 package view;
 
-import java.io.IOException;
-
 import util.My;
 
 public class Layout {
@@ -16,6 +14,10 @@ public class Layout {
 
     public static void manufactureDate() {
         My.Print("manufactureDate: ");
+    }
+
+    public static void menu() {
+        My.Print("1-Inserir produto \t0-Sair");
     }
 
 }

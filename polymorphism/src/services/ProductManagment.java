@@ -3,6 +3,8 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import constant.Kind;
 import entities.ImportedProduct;
 import entities.Product;
 import entities.UsedProduct;
@@ -26,6 +28,10 @@ public class ProductManagment {
         Layout.kind();
 
         switch (input.nextInt()) {
+            case 0:
+                Product product = new Product(nameController, priceController, Kind.COMMON);
+                productManagment.add(product);
+                break;
             case 1:
                 Layout.customsFree();
                 customsFreeController = input.nextInt();
@@ -38,10 +44,17 @@ public class ProductManagment {
                 UsedProduct used = new UsedProduct(nameController, priceController, manufactureDateController);
                 productManagment.add(used);
                 break;
+
         }
 
         My.Print("product successfully added!");
-        input.close();
+    }
+
+    public void showAll() {
+        My.Print("-----------------------------------");
+        for (Product e : productManagment) {
+            My.Print(e.toString());
+        }
     }
 
 }

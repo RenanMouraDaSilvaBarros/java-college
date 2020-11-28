@@ -3,12 +3,17 @@ package entities;
 import constant.Kind;
 
 public class ImportedProduct extends Product {
-    Kind kind = Kind.IMPORTED;
+    static Kind kind = Kind.IMPORTED;
     double customsFree;
 
     public ImportedProduct(String name, double price, double customsFree) {
-        super(name, price);
+        super(name, price, kind);
         this.customsFree = customsFree;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "CustomsFree: " + customsFree + "\n";
     }
 
 }

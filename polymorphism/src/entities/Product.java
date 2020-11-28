@@ -3,16 +3,17 @@ package entities;
 import constant.Kind;
 
 public class Product {
-
+    private static int id = 1;
     String name;
 
     double price;
 
     Kind kind = Kind.COMMON;
 
-    public Product(String name, double price) {
+    public Product(String name, double price, Kind kind) {
         this.name = name;
         this.price = price;
+        this.kind = kind;
     }
 
     String priceTag() {
@@ -37,7 +38,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product [name=" + name + ", price=" + price + "]";
+        return "Product #" + id++ + " data:\n" + "Common, used or imported? " + kind + "\nName: " + name + "\nPrice: "
+                + price + "\n";
     }
 
 }

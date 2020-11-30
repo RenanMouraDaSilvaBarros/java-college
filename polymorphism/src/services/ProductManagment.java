@@ -44,7 +44,6 @@ public class ProductManagment {
                 UsedProduct used = new UsedProduct(nameController, priceController, manufactureDateController);
                 productManagment.add(used);
                 break;
-
         }
 
         My.Print("product successfully added!");

@@ -16,8 +16,8 @@ public class Product {
         this.kind = kind;
     }
 
-    String priceTag() {
-        return String.valueOf(price);
+    double priceTag() {
+        return price;
     }
 
     public String getName() {
@@ -39,7 +39,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product #" + id++ + " data:\n" + "Common, used or imported? " + kind + "\nName: " + name + "\nPrice: "
-                + price + "\n";
+                + priceTag() + "\n";
     }
 
 }

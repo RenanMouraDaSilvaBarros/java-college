@@ -1,7 +1,6 @@
 package entities;
 
 import constant.Kind;
-import java.util.Date;
 
 public class UsedProduct extends Product {
 
@@ -13,11 +12,8 @@ public class UsedProduct extends Product {
         this.manufactureDate = manufactureDate;
     }
 
-    Date manufatureDate;
 
-    String priceTag() {
-        return "";
-    }
+   
 
     @Override
     public String toString() {

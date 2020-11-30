@@ -12,6 +12,11 @@ public class ImportedProduct extends Product {
     }
 
     @Override
+    double priceTag() {
+        return super.priceTag() * customsFree;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + "CustomsFree: " + customsFree + "\n";
     }

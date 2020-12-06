@@ -10,14 +10,14 @@ public class Conta {
 
     // construtores
     public Conta() {
-
+        this.saldo = 0;
     }
 
     public Conta(int numero, String agencia, String titular, double saldo) {
         this.numero = numero;
         this.agencia = agencia;
         this.titular = titular;
-        this.saldo = saldo;
+        this.saldo = 0;
     }
 
     // get e setts

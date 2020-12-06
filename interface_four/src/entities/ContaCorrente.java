@@ -3,12 +3,12 @@ package entities;
 import constants.Tipo;
 import interfaces.*;
 
-public class ContaConrrente extends Conta implements Tributavel {
+public class ContaCorrente extends Conta implements Tributavel {
 
-    public ContaConrrente() {
+    public ContaCorrente() {
     }
 
-    public ContaConrrente(int numero, String agencia, String titular, double saldo) {
+    public ContaCorrente(int numero, String agencia, String titular, double saldo) {
         super(numero, agencia, titular, saldo);
     }
 

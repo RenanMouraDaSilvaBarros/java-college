@@ -1,13 +1,18 @@
 package utils;
 
+import entities.Conta;
+
 public class Validar {
+
+    public static final String SUCESSO = "OPERAÇÃO REALIZADA COM SUCESSO!";
+    public static String FALHA = "OPERAÇÃO REALIZADA COM SUCESSO!";
 
     public static boolean deposito(double depositar) {
 
         if (Enumero(depositar) && depositar > 0)
             return true;
 
-        Erro.ERRO("depósito valor inválido");
+        Erro.ERRO(FALHA);
 
         return false;
     }
@@ -17,7 +22,7 @@ public class Validar {
         if (Enumero(saque) && saque <= saldo)
             return true;
 
-        Erro.ERRO("Saque seu saldo é insuficiente");
+        Erro.ERRO(FALHA);
 
         return false;
     }
@@ -33,7 +38,7 @@ public class Validar {
 
     public static boolean Etransferivel(double saldo, double tranferencia) {
         if (tranferencia <= 0) {
-            Erro.ERRO("operação inválida");
+            Erro.ERRO(FALHA);
             return false;
         }
         return tranferencia <= saldo;
@@ -45,8 +50,12 @@ public class Validar {
                 return true;
             }
         }
-        Erro.ERRO("operação inválida");
+        Erro.ERRO(FALHA);
         return false;
+    }
+
+    public static boolean Enull(Conta conta) {
+        return conta != null;
     }
 
 }

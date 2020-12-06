@@ -1,6 +1,8 @@
 package entities;
 
-public abstract class Conta {
+import utils.Validar;
+
+public class Conta {
     int numero;
     String agencia;
     String titular;
@@ -43,25 +45,31 @@ public abstract class Conta {
         return saldo;
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        this.saldo += saldo;
     }
 
     // operações
-    public void deposita(int value) {
+    public void deposita(double value) {
 
+        if (Validar.deposito(value)) {
+            setSaldo(value);
+        }
     }
 
-    public void sacar() {
+    public void sacar(double value) {
+        if (Validar.saque(value, saldo)) {
 
+            setSaldo(value * -1);
+        }
     }
 
     public void transfere() {
 
-    }
-
-    public int getNumero() {
-        return numero;
     }
 
     @Override

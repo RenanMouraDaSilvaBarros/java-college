@@ -73,4 +73,22 @@ public class Services {
 
     }
 
+    public static void menuDirecionar() {
+        Scanner entrada = new Scanner(System.in);
+        int opcao = entrada.nextInt();
+
+        switch (opcao) {
+            case 1:
+                registrar();
+                break;
+            case 2:
+                listar();
+                break;
+            case 3:
+                System.exit(0);
+                break;
+        }
+
+    }
+
 }

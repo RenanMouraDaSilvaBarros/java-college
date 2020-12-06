@@ -6,10 +6,9 @@ public class View {
 
 	public static void inicial() {
 		Minha.saida("Bem vindo! ao banco");
-		Minha.saida("1-Cadastre-se");
-		Minha.saida("2-Serviços da conta");
-		Minha.saida("3-Listar todos os clientes");
-		Minha.saida("4-Finalizar expediente");
+		Minha.saida("1-Criar conta");
+		Minha.saida("2-Listar todos os clientes");
+		Minha.saida("3-Finalizar expediente");
 	}
 
 	public static void servicos() {

@@ -1,9 +1,11 @@
 package interfaces;
 
+import constants.Tipo;
+
 public interface Tributavel {
     double getValorImposto();
 
     String getTitula();
 
-    String getTipo();
+    Tipo getTipo();
 }

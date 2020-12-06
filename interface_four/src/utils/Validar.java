@@ -5,7 +5,7 @@ import entities.Conta;
 public class Validar {
 
     public static final String SUCESSO = "OPERAÇÃO REALIZADA COM SUCESSO!";
-    public static String FALHA = "OPERAÇÃO REALIZADA COM SUCESSO!";
+    public static String FALHA = "OPERAÇÃO FALHOU";
 
     public static boolean deposito(double depositar) {
 

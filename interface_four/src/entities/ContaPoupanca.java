@@ -25,7 +25,7 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public String toString() {
-        return super.toString() + "(tipo: " + getTipo() + ")";
+        return super.toString() + "tipo: " + getTipo() + "\n";
     }
 
 }

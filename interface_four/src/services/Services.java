@@ -17,11 +17,12 @@ public class Services {
     public static ArrayList<Conta> contas = new ArrayList<Conta>();
 
     public static void registrar() {
-        Minha.saida("----------------------------------------------------\n");
 
         Scanner entrada = new Scanner(System.in);
         boolean NaoValida = true;
         Conta conta = new Conta();
+
+        Minha.saida("-------------------------CADASTRAR----------------------");
 
         Minha.saida("titular: ");
         conta.setTitular(entrada.nextLine());
@@ -56,16 +57,15 @@ public class Services {
 
         Minha.saida(Validar.SUCESSO);
 
-        Minha.saida("----------------------------------------------------\n\n");
     }
 
     public static void listar() {
+        Minha.saida("-------------------------LISTAR----------------------");
+
         if (!contas.isEmpty()) {
             for (Conta e : contas) {
-                System.out.print("----------------------------------------------------\n");
-                System.out.print(e.toString());
-                System.out.println("----------------------------------------------------\n\n");
-
+                Minha.saida(e.toString());
+                Minha.saida("-----------------------------------------------");
             }
         } else {
             Erro.ERRO(Validar.FALHA);

@@ -115,7 +115,8 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta [agencia=" + agencia + ", numero=" + numero + ", saldo=" + saldo + ", titular=" + titular + "]";
+        return "Conta agencia: " + agencia + "\n" + "numero: " + numero + "\n" + "saldo: " + saldo + "\n" + "titular: "
+                + titular + "\n";
     }
 
 }

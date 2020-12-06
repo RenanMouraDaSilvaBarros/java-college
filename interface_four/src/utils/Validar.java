@@ -7,7 +7,7 @@ public class Validar {
         if (Enumero(depositar) && depositar > 0)
             return true;
 
-        Erro.ERRO("");
+        Erro.ERRO("depósito valor inválido");
 
         return false;
     }
@@ -17,12 +17,8 @@ public class Validar {
         if (Enumero(saque) && saque <= saldo)
             return true;
 
-        Erro.ERRO("Seu saldo é insuficiente");
+        Erro.ERRO("Saque seu saldo é insuficiente");
 
-        return false;
-    }
-
-    public static boolean transferencia(double valor) {
         return false;
     }
 
@@ -33,6 +29,24 @@ public class Validar {
         String number = entrada.replace(",", ".");
         return number.matches("[-+]?[0-9]*\\.?[0-9]+");
 
+    }
+
+    public static boolean Etransferivel(double saldo, double tranferencia) {
+        if (tranferencia <= 0) {
+            Erro.ERRO("operação inválida");
+            return false;
+        }
+        return tranferencia <= saldo;
+    }
+
+    public static boolean transferencia(double saldo, double transferencia) {
+        if (Enumero(saldo) && Enumero(transferencia)) {
+            if (Etransferivel(saldo, transferencia)) {
+                return true;
+            }
+        }
+        Erro.ERRO("operação inválida");
+        return false;
     }
 
 }

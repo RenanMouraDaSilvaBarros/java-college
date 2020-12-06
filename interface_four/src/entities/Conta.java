@@ -63,13 +63,15 @@ public class Conta {
 
     public void sacar(double value) {
         if (Validar.saque(value, saldo)) {
-
             setSaldo(value * -1);
         }
     }
 
-    public void transfere() {
-
+    public void transfere(Conta favorecida, double transferencia) {
+        if (Validar.transferencia(this.getSaldo(), transferencia)) {
+            this.setSaldo(transferencia * -1);
+            favorecida.setSaldo(transferencia);
+        }
     }
 
     @Override

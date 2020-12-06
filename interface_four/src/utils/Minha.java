@@ -9,13 +9,14 @@ public class Minha {
 
     public static int aleatorio(int max) {
 
-        int number = new Random().nextInt();
         int aleatorio = 0;
 
         for (int i = 0; i < max; i++) {
-            aleatorio += number;
+            aleatorio += new Random().nextInt(9) * Math.pow(10, i);
         }
-
+        if (aleatorio < 0) {
+            return aleatorio * -1;
+        }
         return aleatorio;
 
     }

@@ -12,6 +12,13 @@ public class ContaCorrente extends Conta implements Tributavel {
         super(numero, agencia, titular, saldo);
     }
 
+    public void copiar(Conta conta) {
+        this.numero = conta.getNumero();
+        this.agencia = conta.getAgencia();
+        this.titular = conta.getTitular();
+        this.saldo = conta.getSaldo();
+    }
+
     @Override
     public double getValorImposto() {
         return 2D;
@@ -26,4 +33,10 @@ public class ContaCorrente extends Conta implements Tributavel {
     public Tipo getTipo() {
         return Tipo.Corrente;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "(tipo: " + getTipo() + ")";
+    }
+
 }

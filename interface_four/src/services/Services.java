@@ -4,10 +4,9 @@ import entities.ContaCorrente;
 import entities.ContaPoupanca;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import entities.Conta;
+import entities.*;
 import utils.Erro;
 import utils.Minha;
 import utils.Validar;
@@ -27,20 +26,24 @@ public class Services {
         Minha.saida("titular: ");
         conta.setTitular(entrada.nextLine());
         conta.setNumero(Minha.aleatorio(6));
-        Minha.saida("Seu numero da conta: " + conta.getNumero());
+        Minha.saida("numero da sua conta: " + conta.getNumero());
         conta.setAgencia(Minha.aleatorio(3) + "-" + Minha.aleatorio(1));
-        Minha.saida("Sua agencia: " + conta.getAgencia());
+        Minha.saida("numero da sua agencia: " + conta.getAgencia());
 
         while (NaoValida) {
             View.tipo();
             switch (entrada.next().charAt(0)) {
                 case '1':
-                    contas.add((ContaCorrente) conta);
-                    Minha.saida(conta.toString());
+                    ContaCorrente contaCorrente = new ContaCorrente();
+                    contaCorrente.copiar(conta);
+                    contas.add(contaCorrente);
+                    Minha.saida(contaCorrente.toString());
                     NaoValida = false;
                     break;
                 case '2':
-                    contas.add((ContaPoupanca) conta);
+                    ContaPoupanca contaPoupanca = new ContaPoupanca();
+                    contaPoupanca.copiar(conta);
+                    contas.add(contaPoupanca);
                     Minha.saida(conta.toString());
                     NaoValida = false;
                     break;
@@ -51,9 +54,23 @@ public class Services {
             }
         }
 
-        Erro.ERRO(Validar.SUCESSO);
+        Minha.saida(Validar.SUCESSO);
 
         Minha.saida("----------------------------------------------------\n\n");
+    }
+
+    public static void listar() {
+        if (!contas.isEmpty()) {
+            for (Conta e : contas) {
+                System.out.print("----------------------------------------------------\n");
+                System.out.print(e.toString());
+                System.out.println("----------------------------------------------------\n\n");
+
+            }
+        } else {
+            Erro.ERRO(Validar.FALHA);
+        }
+
     }
 
 }

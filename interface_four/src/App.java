@@ -1,6 +1,4 @@
-import entities.Conta;
 import services.Services;
-import utils.Minha;
 
 public class App {
     public static void main(String[] args) {
@@ -13,6 +11,9 @@ public class App {
         // Minha.saida(s2.toString());
 
         Services.registrar();
+        Services.registrar();
+
+        Services.listar();
 
     }
 }
